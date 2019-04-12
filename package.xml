@@ -58,7 +58,11 @@
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
-
+  <build_depend>libpcl-all-dev</build_depend>
+  <exec_depend>libpcl-all</exec_depend>
+  <exec_depend>pcl_ros</exec_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_export_depend>pcl_ros</build_export_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
