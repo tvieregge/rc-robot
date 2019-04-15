@@ -16,8 +16,18 @@ void chatterCallback(const sensor_msgs::PointCloud2ConstPtr& input)
     // Create a container for the data.
   sensor_msgs::PointCloud2 output;
 
+  // Container for original & filtered data
+  pcl::PCLPointCloud2* cloud = new pcl::PCLPointCloud2;
+  pcl::PCLPointCloud2ConstPtr cloudPtr(cloud);
+
+  // Convert to PCL data type
+  pcl_conversions::toPCL(*input, *cloud);
+
   // Do data processing here...
   output = *input;
+  for (auto v : cloud->data) {
+    std::cout << v << "\n";
+  }
 
   // Publish the data.
   pub.publish (output);
