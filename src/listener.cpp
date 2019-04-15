@@ -9,7 +9,7 @@
 
 ros::Publisher pub;
 
-void chatterCallback(const sensor_msgs::PointCloud2ConstPtr& input)
+void chatterCallback(const sensor_msgs::PointCloud2 & input)
 {
     std::clock_t    start;
     start = std::clock();
@@ -21,17 +21,20 @@ void chatterCallback(const sensor_msgs::PointCloud2ConstPtr& input)
   pcl::PCLPointCloud2ConstPtr cloudPtr(cloud);
 
   // Convert to PCL data type
-  pcl_conversions::toPCL(*input, *cloud);
+  /* pcl_conversions::toPCL(*input, *cloud); */
+  pcl::PointCloud<pcl::PointXYZRGB> out;
+  pcl::fromROSMsg(input, out);
 
   // Do data processing here...
-  output = *input;
+  /* output = *input; */
   /* for (auto v : cloud->data) { */
     printf("%d", cloud->data[0]);
-    printf("%d", cloud->data[1]);
-    printf("%d", cloud->data[2]);
-    printf("%d", cloud->data[3]);
-    printf("%d", cloud->data[4]);
   /* } */
+
+    pcl::PointCloud<pcl::PointXYZRGB>::iterator it;
+    for(it = out.begin(); it != out.end(); it++){
+        std::cout << it->x << ", " << it->y << ", " << it->z << std::endl;
+    }
 
   // Publish the data.
   pub.publish (output);
