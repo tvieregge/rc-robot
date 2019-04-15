@@ -9,35 +9,35 @@
 
 ros::Publisher pub;
 
-void chatterCallback(const sensor_msgs::PointCloud2 & input)
+void chatterCallback(const sensor_msgs::PointCloud2ConstPtr& input)
 {
     std::clock_t    start;
     start = std::clock();
     // Create a container for the data.
-  sensor_msgs::PointCloud2 output;
+  /* sensor_msgs::PointCloud2 output; */
 
   // Container for original & filtered data
-  pcl::PCLPointCloud2* cloud = new pcl::PCLPointCloud2;
-  pcl::PCLPointCloud2ConstPtr cloudPtr(cloud);
+  /* pcl::PCLPointCloud2* cloud = new pcl::PCLPointCloud2; */
+  /* pcl::PCLPointCloud2ConstPtr cloudPtr(cloud); */
 
   // Convert to PCL data type
   /* pcl_conversions::toPCL(*input, *cloud); */
-  pcl::PointCloud<pcl::PointXYZRGB> out;
-  pcl::fromROSMsg(input, out);
+  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
+  pcl::fromROSMsg (*input, *cloud);
 
   // Do data processing here...
   /* output = *input; */
   /* for (auto v : cloud->data) { */
-    printf("%d", cloud->data[0]);
+ //   printf("%d", cloud->data[0]);
   /* } */
 
-    pcl::PointCloud<pcl::PointXYZRGB>::iterator it;
-    for(it = out.begin(); it != out.end(); it++){
+    pcl::PointCloud<pcl::PointXYZ>::iterator it;
+    for(it = cloud->begin(); it != cloud->end(); it++){
         std::cout << it->x << ", " << it->y << ", " << it->z << std::endl;
     }
 
   // Publish the data.
-  pub.publish (output);
+  /* pub.publish (output); */
   std::cout << "Time: " << (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
 }
 
