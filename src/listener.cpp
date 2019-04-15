@@ -26,7 +26,7 @@ void chatterCallback(const sensor_msgs::PointCloud2ConstPtr& input)
   // Do data processing here...
   output = *input;
   for (auto v : cloud->data) {
-    std::cout << v << "\n";
+    printf("%d", v);
   }
 
   // Publish the data.
