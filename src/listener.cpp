@@ -32,9 +32,18 @@ void chatterCallback(const sensor_msgs::PointCloud2ConstPtr& input)
   /* } */
 
     pcl::PointCloud<pcl::PointXYZ>::iterator it;
+    float closest_z = FLT_MAX;
+    float closest_x = 0;
+    float closest_y = 0;
     for(it = cloud->begin(); it != cloud->end(); it++){
-        std::cout << it->x << ", " << it->y << ", " << it->z << std::endl;
+        if (it->z < closest_z){
+            closest_x = it->x;
+            closest_y = it->y;
+            closest_z = it->z;
+        }
     }
+
+    std::cout << closest_x << ", " << closest_y << ", " << closest_z << std::endl;
 
   // Publish the data.
   /* pub.publish (output); */
