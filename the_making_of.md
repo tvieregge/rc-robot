@@ -1,5 +1,28 @@
 # ROS notes
 
+## Notes: 4/22
+### What did we accomplish?
+1. tried out the [blink tutorial](https://www.arduino.cc/en/tutorial/blink) to make sure everything was hooked up right
+2. tried out a [rosserial_arduino tutorial](http://wiki.ros.org/rosserial_arduino/Tutorials/Hello%20World) to make our arduino publish messages
+
+### Other notes
+guides:
+- https://www.arduino.cc/en/guide/environment
+- http://wiki.ros.org/rosserial
+- run `rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200` to make your arduino publish
+
+our specific setup:
+- Board: Arduino nano w/ ATMEGA328PA-PU
+- Serial Port: ttyUSB0
+- We had to run the arduino program as root
+
+### Reminder
+To ssh into our raspberry pi:
+``` bash
+ssh ubuntu@10.0.16.120
+```
+
+
 ## Notes: 4/19
 - [here's](https://gist.github.com/ngozinwogwugwu/f1fc6116ce4ade64d1e475bf516790f3) what we ended up making
 - [What we used for our launch file](https://gist.github.com/WinKILLER/7a8f6aa494157f02a633efb3831ad69f)
