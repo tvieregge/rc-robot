@@ -1,5 +1,22 @@
 # ROS notes
 
+## Notes 4/25
+### Actions
+- connected our arduino nano to our motor shield using a breadboard a lots of tiny wires
+- connected our motor shield to a 9v battery and two motors, tried out an example program to make sure they were hooked up right
+- started looking at example projects to see how we'd handle velocity/twist commands
+
+### Resources
+- [our motor shield specs](https://www.arduino.cc/en/uploads/Main/arduino_MotorShield_Rev3-schematic.pdf)
+- [the example code](https://www.instructables.com/id/Arduino-Motor-Shield-Tutorial/) that we used make the nano + motor shield control a motor
+- [the example code](https://github.com/Reinbert/ros_diffdrive_robot/blob/master/ros_diffdrive_robot.ino) that we used to take velocity/twist commands from the pi and convert that into on/off commands for the motors
+
+// our out ports
+```
+12, 9, 3
+13, 8, 11
+```
+
 ## Notes: 4/22
 ### What did we accomplish?
 1. tried out the [blink tutorial](https://www.arduino.cc/en/tutorial/blink) to make sure everything was hooked up right
