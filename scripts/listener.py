@@ -35,8 +35,8 @@ def callback(scan):
        min_range_angle = current_angle
      current_angle += scan.angle_increment
 
-   print ("min_depth:       " + str(min_depth))
-   print ("min_range point: " + str(min_range_angle))
+   # print ("min_depth:       " + str(min_depth))
+   # print ("min_range point: " + str(min_range_angle))
 
    vel_msg = Twist()
    if min_depth > GOAL_DEPTH and min_depth != scan.range_max:
@@ -48,7 +48,7 @@ def callback(scan):
    else:
        vel_msg.angular.z = 0
 
-   print ("vel_msg: " + str(vel_msg))
+   # print ("vel_msg: " + str(vel_msg))
 
    pub.publish(vel_msg)
 
