@@ -17,7 +17,6 @@ Connect the Kinect to the Pi, Connect the Pi to the Adruino, connect the Arduino
   ```
   4. run rosserial so that the ard
 ```
-sudo apt-get install ros-kinetic-depthimage-to-laserscan
 rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
 ```
  5. _make sure battery isn't dead_
@@ -26,6 +25,7 @@ $ rostopic pub /cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.8
 
 ### other notes
 Twist format:
+```
 geometry_msgs/Vector3 linear
   float64 x
   float64 y
@@ -34,10 +34,11 @@ geometry_msgs/Vector3 angular
   float64 x
   float64 y
   float64 z
+```
 
-  sudo apt-get install ros-kinetic-depthimage-to-laserscan
+ ` sudo apt-get install ros-kinetic-depthimage-to-laserscan`
 
-  roslaunch beginner_tutorials depthimage_to_laserscan.launch
+`  roslaunch beginner_tutorials depthimage_to_laserscan.launch`
 
 
 ## Notes 4/25
