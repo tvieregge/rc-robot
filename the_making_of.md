@@ -1,5 +1,45 @@
 # ROS notes
 
+## 5/2: Putting it all together
+Connect the Kinect to the Pi, Connect the Pi to the Adruino, connect the Arduino to the Motor Sheild. Do these things
+
+  1. launch kinect drivers
+  ```
+  roslaunch freenect_launch freenect.launch
+  ```
+  2. start listener.py
+  ```
+  rosrun beginner_tutorials listener.py
+  ```
+  3. run depthimage_to_laserscan.launch
+  ```
+  rosrun depthimage_to_laserscan depthimage_to_laserscan
+  ```
+  4. run rosserial so that the ard
+```
+sudo apt-get install ros-kinetic-depthimage-to-laserscan
+rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
+```
+ 5. _make sure battery isn't dead_
+ 
+$ rostopic pub /cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.8]'
+
+### other notes
+Twist format:
+geometry_msgs/Vector3 linear
+  float64 x
+  float64 y
+  float64 z
+geometry_msgs/Vector3 angular
+  float64 x
+  float64 y
+  float64 z
+
+  sudo apt-get install ros-kinetic-depthimage-to-laserscan
+
+  roslaunch beginner_tutorials depthimage_to_laserscan.launch
+
+
 ## Notes 4/25
 ### Actions
 - connected our arduino nano to our motor shield using a breadboard a lots of tiny wires
