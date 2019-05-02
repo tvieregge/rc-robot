@@ -21,7 +21,6 @@ rosrun rosserial_python serial_node.py _port:=/dev/ttyUSB0 _baud:=115200
 ```
  5. _make sure battery isn't dead_
  
-$ rostopic pub /cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.8]'
 
 ### other notes
 Twist format:
@@ -35,6 +34,9 @@ geometry_msgs/Vector3 angular
   float64 y
   float64 z
 ```
+
+`$ rostopic pub /cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, 1.8]'`
+
 
  ` sudo apt-get install ros-kinetic-depthimage-to-laserscan`
 
