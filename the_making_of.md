@@ -13,7 +13,7 @@ Connect the Kinect to the Pi, Connect the Pi to the Adruino, connect the Arduino
   ```
   3. run depthimage_to_laserscan.launch
   ```
-  rosrun depthimage_to_laserscan depthimage_to_laserscan
+  roslaunch beginner_tutorials depthimage_to_laserscan.launch
   ```
   4. run rosserial so that the ard
 ```
