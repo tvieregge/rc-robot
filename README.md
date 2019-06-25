@@ -2,6 +2,9 @@
 This robot isn't very clever, but it _should_ follow you around
 
 
+<img src="making_of_photos/rc-robot.gif" width="300">
+
+
 # Components
 - [Microsoft Kinect for Xbox One](https://www.amazon.com/Microsoft-L6M-00001-Kinect-for-Windows/dp/B006UIS53K)
 - [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
